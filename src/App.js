@@ -123,6 +123,7 @@ export default function App() {
         placeholder='Adı'
         onChange={handleChange}
         name='firstName'
+        value={formData.firstName}
       />
 
       <input
@@ -130,6 +131,7 @@ export default function App() {
         placeholder='Soyadı'
         onChange={handleChange}
         name='lastName'
+        value={formData.lastName}
       />
 
       <input
@@ -137,6 +139,7 @@ export default function App() {
         placeholder='Email'
         onChange={handleChange}
         name='email'
+        value={formData.email}
       />
 
       <fieldset>
@@ -150,6 +153,7 @@ export default function App() {
               id='yes'
               name='privacyResponse'
               value='yes'
+              checked={formData.privacyResponse === 'yes'}
               onChange={handleChange}
             />
             Evet
@@ -161,7 +165,7 @@ export default function App() {
               id='no'
               name='privacyResponse'
               value='no'
-              defaultChecked
+              checked={formData.privacyResponse === 'no'}
               onChange={handleChange}
             />
             Hayır
@@ -173,6 +177,7 @@ export default function App() {
               id='absolutely'
               name='privacyResponse'
               value='absolutely'
+              checked={formData.privacyResponse ==='absolutely'}
               onChange={handleChange}
             />
             Kesinlikle
@@ -186,7 +191,7 @@ export default function App() {
           değerlendirirsiniz?
         </legend>
 
-        <select onChange={handleChange} name='rating' defaultValue='10'>
+        <select onChange={handleChange} name='rating' value={formData.rating}>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -205,6 +210,7 @@ export default function App() {
           type='checkbox'
           name='marketingResponse'
           onChange={handleChange}
+          checked={formData.marketingResponse}
         />
 
         <div className='checkmark'></div>
